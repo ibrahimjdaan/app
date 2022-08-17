@@ -1,0 +1,8 @@
+body, html {
+  overflsow: hidden;
+  min-height: 100vh;
+  margin: 0;
+}
+body{
+  background-image: linear-gradient(to right, #343CDC, #000d3c);
+}

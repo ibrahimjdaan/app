@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="../images/logo.png">
+    <title>Nerds</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-light" style="background:linear-gradient(#343dd8, #152d85);">
+        <div class="container-fulid p-0 m-0 px-3 d-flex justify-content-between w-100">
+          <a class="navbar-brand p-0 m-0">
+            <img src="../images/logo.png" alt="" width="45" height="45">
+          </a>
+          <div class="">
+            <a class="navbar-brand text-light pt-1 mx-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#search-box-offcanvas" aria-controls="search-box-offcanvas">
+              <i class="bi bi-search fs-1"></i>
+            </a>
+            <a class="navbar-brand text-light fs-6 pt-1 mx-1 position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#notfc" aria-controls="notfc">
+              <i class="bi bi-bell-fill fs-1"></i>
+              <span id="not-btn"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="notfc" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header" style="padding-top:25px;">
+          <h5 id="notfcLabel">الإشعارات</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="notfc-body">
+          <div class="spinner mt-5 d-flex justify-content-center">
+            <div class="spinner-border" role="status"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container-fulid h-100">
+        <div class="row h-100 m-0">
+          <div class="col-12 h-100 m-0 p-0 nav-modal" id="home">
+            <object class="w-100 h-100" type="text/html" data="./layout/home/index.html"></object>
+          </div>
+          <div class="col-12 h-100 m-0 p-0 nav-modal" id="subscriptions">
+            <object class="w-100 h-100" type="text/html" data="./layout/subscriptions/index.html"></object>
+          </div>
+          <div class="col-12 h-100 m-0 p-0 nav-modal" id="money">
+            <object class="w-100 h-100" type="text/html" data="./layout/payment/index.html"></object>
+          </div>
+          <div class="col-12 h-100 m-0 p-0 nav-modal" id="options">
+            <object class="w-100 h-100" type="text/html" data="./layout/options/index.html"></object>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="search-box-offcanvas">
+        <div class="offcanvas-header">
+          <i type="button" class="bi bi-arrow-right me-2 fs-3" data-bs-dismiss="offcanvas" aria-label="Close"></i>
+          <input type="search" class="form-control" id="search-box-input" oninput="suggest(this.value);" placeholder="أكتب هنا">
+        </div>
+        <div class="offcanvas-body small" id="search-box-body">
+
+        </div>
+      </div>
+      <nav class="navbar border-top">
+        <div class="container-fulid p-0 m-0 px-3 d-flex justify-content-between w-100">
+          <a class="nav-link link-nerd-mune" id="options-tab" onclick="active('options');">
+            <i class="bi bi-list fs-1"></i>
+          </a>
+          <a class="nav-link link-nerd-mune" id="money-tab" onclick="active('money');">
+            <i class="bi bi-currency-dollar fs-1"></i>
+          </a>
+          <a class="nav-link link-nerd-mune" id="subscriptions-tab" onclick="active('subscriptions');">
+            <i class="bi bi-collection-play-fill fs-1"></i>
+          </a>
+          <a class="nav-link link-nerd-mune" id="home-tab" onclick="active('home');">
+            <i class="bi bi-house-door-fill fs-1"></i>
+          </a>
+        </div>
+      </nav>
+      <div class="modal fade" id="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body" id="dialog-container">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/notification.js"></script>
+    <script src="./js/search.js"></script>
+  </body>
+</html>

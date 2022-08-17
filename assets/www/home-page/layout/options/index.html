@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="icon" href="../../../images/logo.png">
+    <title>Nerds</title>
+  </head>
+  <body>
+    <main>
+      <div class="position-fixed justify-content-center align-items-center w-100 h-100 position-fixed w-100 h-100" style="display:none;">
+        <div id="logout-alert" class="toast bg-light my-4" role="alert" aria-live="assertive" aria-atomic="true" data-bs-config='{"autohide":false}'>
+          <div class="toast-body">
+            هل تود تسجيل الخروج؟
+            <div class="mt-2 pt-2 border-top">
+              <a role="button" class="nav-link link-nerd d-inline" onclick="logout();">تسجيل خروج</a>
+              <button type="button" class="btn btn-secondary btn-sm ms-5" data-bs-dismiss="toast" onclick="document.querySelector('.position-fixed').style.display = 'none'">الغاء</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mb-2">
+        <div class="row mt-3">
+          <div class="col-12 text-center placeholder-glow align-items-center my-5" id="userInfoContainer">
+            <img class="border border-2 placeholder rounded-pill " width="120" height="120" alt="" style="border-color:#2535ae !important;" role="button">
+            <h2 class="w-100"> <p class="placeholder col-5 mt-2"></p> </h2>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 py-2 px-4">
+            <div class="bg-ligt nerd-container d-flex justify-content-between border rounded p-2 align-items-center" role="button" onclick="goto('../../../setting/index.html');">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-nut-fill fs-1 me-2"></i>
+                <span>إعدادات الحساب</span>
+              </div>
+              <i class="bi bi-arrow-left-circle fs-1"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 py-2 px-4">
+            <div class="bg-ligt nerd-container d-flex justify-content-between border rounded p-2 align-items-center" style="border-color:#2535ae !important; color:#2535ae;" role="button" onclick="goto('../../../nerd/index.html');">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-mortarboard-fill fs-1 me-2"></i>
+                <span>طلب نيرد</span>
+              </div>
+              <i class="bi bi-arrow-left-circle fs-1"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 py-2 px-4">
+            <div class="bg-ligt nerd-container d-flex justify-content-between border rounded p-2 align-items-center" style="border-color:#2535ae !important; color:#2535ae;" role="button" onclick="goto('../../../about-us/index.html');">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-link fs-1 me-2"></i>
+                <span>عنا</span>
+              </div>
+              <i class="bi bi-arrow-left-circle fs-1"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 py-2 px-4">
+            <div class="bg-ligt nerd-container d-flex justify-content-between border rounded p-2 align-items-center" style="border-color:#2535ae !important; color:#2535ae;" role="button" onclick="goto('../../../rebort/index.html');">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-bug-fill fs-1 me-2"></i>
+                <span>الإبلاغ عن مشكله</span>
+              </div>
+              <i class="bi bi-arrow-left-circle fs-1"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 py-2 px-4">
+            <div class="bg-ligt nerd-container d-flex justify-content-between border rounded p-2 align-items-center" style="border-color:#2535ae !important; color:#2535ae;" role="button" onclick="goto('../../../support-mail/index.html');">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-mailbox2 fs-1 me-2"></i>
+                <span>بريد الدعم</span>
+              </div>
+              <i class="bi bi-arrow-left-circle fs-1"></i>
+            </div>
+          </div>
+          <div class="col-12 mt-5 d-flex justify-content-center">
+            <button class="btn btn-nerd" style="width:80%" id="logout-alertBtn">
+              <i class="bi bi-power fs-5"></i>
+               خروج
+             </button>
+            <button class="btn nerd-container ms-2" onclick="share();">
+              <i class="bi bi-share-fill fs-5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../../../js/bootstrap.bundle.min.js" ></script>
+    <script src="../../../js/main.js" ></script>
+    <script type="text/javascript" src="./js/main.js" ></script>
+  </body>
+</html>

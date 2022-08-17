@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="icon" href="../../../images/logo.png">
+    <title>Nerds</title>
+    <script src="./js/qr.min.js"></script>
+  </head>
+  <body>
+    <div class="position-fixed w-100 h-100" id='payment_loader' style="background:white;">
+      <div class="h-100 spinner d-flex justify-content-center align-items-center mt-5">
+        <div class="spinner-border" role="status"></div>
+      </div>
+    </div>
+    <main>
+      <div class="container-fulid">
+        <div class="row m-0">
+          <div class="col-12 my-5 text-center">
+            <h1>رصيدك الآن</h1>
+            <div class="fs-2 text-success my-3">
+              <span id="balance"></span>
+              د
+            </div>
+            <h1>رقم الشحن الخاص بك</h1>
+            <div>
+              <input type="text" placeholder="رقم الشحن" id="card" class="form-control mt-5 fs-2 text-center" value="" disabled>
+            </div>
+            <br>
+            <div class="w-100 mt-3 d-flex justify-content-center">
+              <div id="qrcode"></div>
+            </div>
+            <br>
+            <div class="w-100 mt-3 mb-3 d-flex justify-content-center">
+              <button type="submit" class="btn btn-outline-primary" id="copy" onclick="copyer();">
+                <i class="bi bi-copyer fs-5"></i>
+                نسخ
+              </button>
+            </div>
+            <a class="primary-link" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal">كيف يمكنني الحصول على بطاقة؟</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">الحصول على بطاقة</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>يمكنك الحصول على بطاقه من احد الكشكات داخل حرم الجامعه او من خلال المكتبات المحيطه بالجامعة</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">لقد فهمت</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../../js/main.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>

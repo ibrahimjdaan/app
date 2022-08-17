@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Nerds</title>
+  </head>
+  <body>
+    <header></header>
+    <div class="position-fixed w-100 h-100" id='payment_loader' style="background:white;">
+      <div class="h-100 spinner d-flex justify-content-center align-items-center mt-5">
+        <img src="./images/logo.png" alt="" width="245" height="245">
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    if (localStorage.token && localStorage.id) {
+      location = "./home-page/#home";
+    }else {
+      location = "./login/";
+    }
+  </script>
+</html>

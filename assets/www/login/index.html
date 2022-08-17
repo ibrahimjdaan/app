@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="../images/logo.png">
+    <title>Nerds</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="container text-white">
+        <div class="row d-md-flex justify-content-md-center">
+          <div class="col-12 mt-3 text-center">
+            <img class="rounded-pill" src="../images/logo.png" width="150" height="150">
+          </div>
+          <div class="col-xs-12 col-md-8">
+            <ul class="nav nav-tabs w-100 d-flex justify-content-center mt-5" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="home" aria-selected="true">دخول</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="singup-tab" data-bs-toggle="tab" data-bs-target="#singup" type="button" role="tab" aria-controls="profile" aria-selected="false">تسجيل</button>
+              </li>
+            </ul>
+            <div class="tab-content p-3" id="myTabContent">
+              <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="mt-2">
+                  <form class="w-100" method="post" id="loginForm" onsubmit="return doingUp('login')">
+                    <div>
+                      <label class="form-label" for="email">البريد الإلكتروني</label>
+                      <input class="form-control" type="email" name="email" id="email">
+                    </div>
+                    <div class="mt-3">
+                      <label class="form-label" for="password">كلمه السر</label>
+                      <input class="form-control" type="password" name="password" id="password">
+                    </div>
+                    <div class="form-check mt-3">
+                      <input class="form-check-input" type="checkbox" id="showPass"  onclick="show();">
+                      <label class="form-check-label" for="showPass">إضهار كلمه السر</label>
+                    </div>
+                    <button class="btn btn-light mt-4 form-control" type="submit" name="login">تسجيل الدخول</button>
+                    <h5 class="text-center mt-3"><a class="text-info" role="button">هل نسيت كلمه السر؟</a></h5>
+                  </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="singup" role="tabpanel" aria-labelledby="singup-tab">
+                <div class="mt-2">
+                  <form class="row g-3 needs-validation" id="singupForm" method="post" onsubmit="return doingUp('singup')" novalidate>
+                    <h3 class="mb-1 mt-4 text-info">المعلومات الأساسية</h3>
+                    <div class="col-6">
+                      <label for="firstName" class="form-label">الإسم الأول</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" required>
+                      <div class="valid-feedback">
+                        يبدو رآئع
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <label for="lastName" class="form-label">إسم العائلة</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" required>
+                      <div class="valid-feedback">
+                        يبدو رآئع
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="newEmail" class="form-label">البريد الإلكتروني</label>
+                      <input type="email" class="form-control" id="newEmail" name="newEmail" required>
+                      <div class="invalid-feedback">
+                        قم بإدخال بريد إلكتروني صالح
+                      </div>
+                      <div class="col-md-12">
+                        <label for="pass" class="form-label">كلمة السر</label>
+                        <input type="password" class="form-control" id="pass" name="pass" required>
+                        <div class="invalid-feedback">
+                          ادخل كلمة سر قوية
+                        </div>
+                      </div>
+                    </div>
+                    <h3 class="mb-1 mt-4 text-info">المعلومات الأكاديمية</h3>
+                    <div class="col-md-12">
+                      <label for="universalId" class="form-label">الرقم الجامعة</label>
+                      <input type="number" class="form-control" id="universalId" name="universalId" required>
+                      <div class="invalid-feedback">
+                        أدخل رقم جامعي صالح
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="university" class="form-label">الجامعة</label>
+                      <select class="form-select" id="university" onchange="get('college', this.value);" required>
+                        <option selected disabled value="">اختار...</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        إختار جامعة
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="college" class="form-label">اختر الكلية</label>
+                      <select class="form-select" id="college" name="college" onchange="get('major', this.value);" required>
+                        <option selected disabled value="">اختار...</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        إختار التخصص
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="major" class="form-label">التخصص</label>
+                      <select class="form-select" id="major" name="major" required>
+                        <option selected value="">اختار...</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        إختار التخصص
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="terms" name="terms" required>
+                        <label class="form-check-label" for="terms">
+                          أوافق على <a class="link-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button">الشروط والأحكام</a>
+                        </label>
+                        <div class="invalid-feedback">
+                          يجب الموافقة على الشروط والأحكام
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-outline-light mt-2 w-100" name="register" type="submit">إنضمام</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body scroll-area" data-spy="scroll" data-offset="0">
+              <div class="row">
+                <div class='col-4'>
+                  <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action active" href="#list-item-1">Item 1</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0" style='max-height: 300px; overflow-y: scroll'>
+                    <h4 id="list-item-1">Item 1</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus turpis augue, aliquam egestas nunc semper sit amet. Vivamus vel euismod eros. Fusce aliquam vitae nisi quis suscipit. Nullam rutrum convallis dui, a pharetra nulla dapibus eget. In diam justo, finibus in commodo fermentum, maximus sit amet tellus.
+                    </p>
+                    <h4 id="list-item-2">Item 2</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus turpis augue, aliquam egestas nunc semper sit amet. Vivamus vel euismod eros. Fusce aliquam vitae nisi quis suscipit. Nullam rutrum convallis dui, a pharetra nulla dapibus eget. In diam justo, finibus in commodo fermentum, maximus sit amet tellus.
+                    </p>
+                    <h4 id="list-item-3">Item 3</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus turpis augue, aliquam egestas nunc semper sit amet. Vivamus vel euismod eros. Fusce aliquam vitae nisi quis suscipit. Nullam rutrum convallis dui, a pharetra nulla dapibus eget. In diam justo, finibus in commodo fermentum, maximus sit amet tellus.
+                    </p>
+                    <h4 id="list-item-4">Item 4</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus turpis augue, aliquam egestas nunc semper sit amet. Vivamus vel euismod eros. Fusce aliquam vitae nisi quis suscipit. Nullam rutrum convallis dui, a pharetra nulla dapibus eget. In diam justo, finibus in commodo fermentum, maximus sit amet tellus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+						</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">لا أوافق</button>
+              <button type="button" class="btn btn-nerd">أوافق</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="modal fade" id="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body" id="dialog-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>
